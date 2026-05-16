@@ -1,94 +1,184 @@
-# 🛒 C++ E-Commerce System (Linked List Based)
+# 🛒 C++ Inventory & E-Commerce Management System (Linked List Version)
 
-Sistem mini e-commerce berbasis **C++ Console Application** yang dibuat menggunakan struktur data **Linked List, Queue, dan Doubly Linked List** untuk mensimulasikan sistem toko online sederhana.
+Sistem manajemen toko berbasis **C++ Console Application** yang sudah ditingkatkan menjadi sistem **e-commerce sederhana**, lengkap dengan fitur:
 
-## ✨ Features
+- Registrasi & Login user (Admin & Customer)
+- Manajemen barang (CRUD sederhana + navigasi)
+- Sistem keranjang belanja
+- Sistem checkout & pesanan
+- Riwayat pesanan
+- Penyimpanan data ke file (`pengguna.txt`)
+- Struktur data Linked List (Single, Double, Queue)
 
-### 👤 Authentication System
+---
+
+## 🚀 Features
+
+### 👤 User System
 - Registrasi Admin & Customer
 - Login menggunakan ID & Password
-- Auto Generate User ID berdasarkan:
-  - Username
-  - Tanggal lahir
-  - Password
-  - Role
-- Data user disimpan ke file `pengguna.txt`
+- Auto Generate User ID
+- Penyimpanan data user ke file
+- Role-based access (Admin / Customer)
 
-### 📦 Inventory Management (Admin)
-- Tambah barang
-- Lihat daftar barang
-- Struktur data: Doubly Linked List
+---
 
-### 🛒 Shopping System (Customer)
-- Lihat daftar barang
-- Cari barang berdasarkan ID / nama
-- Tambah barang ke keranjang (cart)
+### 📦 Inventory System
+- Tambah Barang (Admin)
+- Daftar Barang (Double Linked List navigation)
+- Cari Barang (by ID / Nama)
+- Stock management saat checkout
 
-### 🧺 Cart System
-- Menyimpan barang sebelum checkout
-- Hitung total belanja
-- Hapus item otomatis saat checkout
+---
 
-### 📦 Order System (Queue)
-- Checkout barang dari keranjang
-- Sistem antrian pesanan (FIFO Queue)
-- Admin bisa approve atau reject pesanan
+### 🛒 Shopping System
+- Keranjang belanja (Linked List)
+- Tambah barang ke keranjang
+- Checkout sistem
+- Nota pembelian otomatis
 
-### 🚚 Order Status
-- Menunggu pembayaran
-- Diproses / Pengiriman
-- Diterima customer
-- Ditolak admin
+---
 
-### 📜 Riwayat Pesanan
-- Menyimpan histori transaksi
-- Bisa diakses Admin & Customer
-- Status final: diterima atau ditolak
+### 📑 Order System
+- Queue pesanan (FIFO)
+- Admin bisa:
+  - Lihat & approve pesanan
+  - Tolak pesanan
+  - Update status pesanan
 
-## 🧠 Data Structure Used
-- Struct
-- Singly Linked List
-- Doubly Linked List
-- Queue (FIFO)
-- Pointer
-- File Handling (fstream)
+---
 
-## 🔐 User ID Generator
-User ID dibuat otomatis dari:
-- Huruf awal & akhir username
+### 📜 History System
+- Riwayat pesanan user
+- Status:
+  - Menunggu Pembayaran
+  - Sedang Diproses
+  - Diterima
+  - Ditolak
+
+---
+
+## 🧠 Data Structures Used
+
+- Singly Linked List → Keranjang
+- Doubly Linked List → Barang & Riwayat
+- Queue → Pesanan
+- File Handling (`fstream`)
+- Dynamic Memory Allocation
+
+---
+
+## 🔐 User ID System
+
+User ID dibuat otomatis berdasarkan:
+- Huruf depan & belakang username
 - Tanggal lahir
-- Digit password
+- Password (angka tertentu)
 - Role (Admin / Customer)
 
+Contoh:
+```
+Username : Daniel
+Password : dan123
+Tanggal  : 12-05-2005
+Role     : Admin
+
+Generated ID : 451230
+```
+
+---
+
 ## 🏗️ Program Flow
+
+```
 Main Menu
 │
 ├── Registrasi
+│   ├── Admin
+│   └── Customer
+│
 ├── Login
+│   ├── Admin Menu
+│   │   ├── Tambah Barang
+│   │   ├── Lihat Barang
+│   │   ├── Pesanan
+│   │   └── Riwayat
 │
-├── Admin Menu
-│ ├── Tambah Barang
-│ ├── Lihat Barang
-│ ├── Kelola Pesanan (Approve / Reject)
-│ └── Riwayat Pesanan
-│
-├── Customer Menu
-│ ├── Lihat Barang
-│ ├── Cari Barang
-│ ├── Keranjang
-│ ├── Checkout
-│ ├── Pesanan Saya
-│ └── Riwayat Pesanan
+│   └── Customer Menu
+│       ├── Lihat Barang
+│       ├── Cari Barang
+│       ├── Keranjang
+│       ├── Checkout
+│       ├── Pesanan Saya
+│       └── Riwayat
 │
 └── Exit
+```
+
+---
 
 ## ⚙️ Technologies
+
 - C++
-- g++ Compiler
-- Visual Studio Code
+- STL (fstream, iostream, ctime)
+- Linked List (Single & Double)
+- Queue System
+- File Storage System
+
+---
+
+## 💾 Data Storage
+
+User data disimpan di:
+```
+pengguna.txt
+```
+
+Format:
+```
+ID
+Username
+Tanggal Lahir
+Role
+Password
+Alamat
+```
+
+---
 
 ## 🚀 How to Run
 
 ### Compile
 ```bash
 g++ main.cpp -o app
+```
+
+### Run (Windows)
+```bash
+app.exe
+```
+
+---
+
+## 📸 Preview
+
+```
+------ Selamat Datang ------
+1. Registrasi
+2. Login
+3. Keluar
+```
+
+---
+
+## 📚 Learning Outcome
+
+Project ini dibuat untuk memahami:
+- Linked List (Single & Double)
+- Queue (FIFO system)
+- File handling C++
+- Sistem login & registrasi
+- Simulasi e-commerce sederhana
+- Manajemen memory (dynamic allocation)
+
+---
