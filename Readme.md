@@ -1,135 +1,94 @@
-# 🛒 C++ Inventory Management System
+# 🛒 C++ E-Commerce System (Linked List Based)
 
-Sistem manajemen barang sederhana berbasis **C++ Console Application** dengan fitur registrasi user, login authentication, role admin/customer, dan pengelolaan barang menggunakan **Linked List**.
-
----
+Sistem mini e-commerce berbasis **C++ Console Application** yang dibuat menggunakan struktur data **Linked List, Queue, dan Doubly Linked List** untuk mensimulasikan sistem toko online sederhana.
 
 ## ✨ Features
 
 ### 👤 Authentication System
 - Registrasi Admin & Customer
-- Login menggunakan ID dan Password
-- Auto Generate User ID
-- Validasi:
-  - Nama
+- Login menggunakan ID & Password
+- Auto Generate User ID berdasarkan:
+  - Username
+  - Tanggal lahir
   - Password
-  - Tanggal Lahir
+  - Role
+- Data user disimpan ke file `pengguna.txt`
 
-### 📦 Inventory Management
+### 📦 Inventory Management (Admin)
+- Tambah barang
+- Lihat daftar barang
+- Struktur data: Doubly Linked List
 
-#### Admin
-- Tambah Barang
-- Lihat Daftar Barang
+### 🛒 Shopping System (Customer)
+- Lihat daftar barang
+- Cari barang berdasarkan ID / nama
+- Tambah barang ke keranjang (cart)
 
-#### Customer
-- Lihat Daftar Barang
-- Cari Barang berdasarkan ID
+### 🧺 Cart System
+- Menyimpan barang sebelum checkout
+- Hitung total belanja
+- Hapus item otomatis saat checkout
 
----
+### 📦 Order System (Queue)
+- Checkout barang dari keranjang
+- Sistem antrian pesanan (FIFO Queue)
+- Admin bisa approve atau reject pesanan
+
+### 🚚 Order Status
+- Menunggu pembayaran
+- Diproses / Pengiriman
+- Diterima customer
+- Ditolak admin
+
+### 📜 Riwayat Pesanan
+- Menyimpan histori transaksi
+- Bisa diakses Admin & Customer
+- Status final: diterima atau ditolak
 
 ## 🧠 Data Structure Used
-
-- `Struct`
-- `Array`
-- `Linked List`
-- `Pointer`
-
----
+- Struct
+- Singly Linked List
+- Doubly Linked List
+- Queue (FIFO)
+- Pointer
+- File Handling (fstream)
 
 ## 🔐 User ID Generator
+User ID dibuat otomatis dari:
+- Huruf awal & akhir username
+- Tanggal lahir
+- Digit password
+- Role (Admin / Customer)
 
-ID user dibuat otomatis berdasarkan:
-- Huruf awal username
-- Huruf akhir username
-- Total digit tanggal lahir
-- Angka pada password
-- Role user
-
-Contoh:
-
-```txt
-Username : Steven
-Tanggal  : 12-05-2005
-Password : dan123
-Role     : admin
-
-Generated ID : 451230
-```
-
----
-
-## 🏗️ Program Structure
-
-```txt
+## 🏗️ Program Flow
 Main Menu
 │
 ├── Registrasi
-│   ├── Admin
-│   └── Customer
-│
 ├── Login
-│   ├── Admin Menu
-│   │   ├── Tambah Barang
-│   │   └── Daftar Barang
-│   │
-│   └── Customer Menu
-│       ├── Daftar Barang
-│       └── Cari Barang
+│
+├── Admin Menu
+│ ├── Tambah Barang
+│ ├── Lihat Barang
+│ ├── Kelola Pesanan (Approve / Reject)
+│ └── Riwayat Pesanan
+│
+├── Customer Menu
+│ ├── Lihat Barang
+│ ├── Cari Barang
+│ ├── Keranjang
+│ ├── Checkout
+│ ├── Pesanan Saya
+│ └── Riwayat Pesanan
 │
 └── Exit
-```
-
----
 
 ## ⚙️ Technologies
-
-- Language : C++
-- IDE : Visual Studio Code
-- Compiler : g++
-
----
+- C++
+- g++ Compiler
+- Visual Studio Code
 
 ## 🚀 How to Run
 
 ### Compile
-
 ```bash
 g++ main.cpp -o app
-```
-
-### Run
-
-Linux / Mac:
-```bash
-./app
-```
-
-Windows:
-```bash
-app.exe
-```
-
----
-
-## 📸 Preview
-
-```txt
-------Selamat Datang!------
-1. Registrasi
-2. Login
-3. Keluar
-```
-
----
-
-## 📚 Learning Purpose
-
-Project ini dibuat untuk mempelajari:
-- Dasar C++
-- Struct & Pointer
-- Linked List
-- Authentication System
-- CRUD sederhana
-- Validasi Input
-
----
